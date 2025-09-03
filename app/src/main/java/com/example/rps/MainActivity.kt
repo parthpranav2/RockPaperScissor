@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -77,10 +78,30 @@ class MainActivity : AppCompatActivity() {
                         (playerMove == "paper" && computerMove == "rock") ||
                         (playerMove == "scissors" && computerMove == "paper") -> {
                     playerScore++
+                    if(playerScore==5){
+                        AlertDialog.Builder(this)
+                            .setTitle("Result")
+                            .setMessage("Congratulations 🎉, you won.")
+                            .setPositiveButton("OK") { dialog, _ ->
+                                dialog.dismiss() // closes the dialog when OK is pressed
+                            }
+                            .show()
+                        resetGame()
+                    }
                     "You Win! 🎉"
                 }
                 else -> {
                     computerScore++
+                    if(computerScore==5){
+                        AlertDialog.Builder(this)
+                            .setTitle("Result")
+                            .setMessage("Better luck next time.")
+                            .setPositiveButton("OK") { dialog, _ ->
+                                dialog.dismiss() // closes the dialog when OK is pressed
+                            }
+                            .show()
+                        resetGame()
+                    }
                     "Computer Wins! 💻"
                 }
             }
