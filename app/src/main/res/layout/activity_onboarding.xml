@@ -23,10 +23,9 @@
         android:layout_height="wrap_content"
         android:text="Play"
         android:textSize="20dp"
-        android:backgroundTint="@android:color/holo_purple"
-        android:textColor="@android:color/black"
+        android:backgroundTint="#732E23"
+        android:textColor="@android:color/white"
         android:layout_marginBottom="10dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
